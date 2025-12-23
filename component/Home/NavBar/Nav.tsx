@@ -11,7 +11,7 @@ type Props = {
 
 const Nav = ({openNav}: Props) => {
   return (
-    <div className='h-[12vh] z-1000 fixed w-full transition-all duration-300  bg-rose-300'>
+    <div className='h-[12vh] z-1000 fixed w-full transition-all duration-300  bg-transparent'>
       <div className='flex items-center justify-between mx-auto h-full w-[85%]'>
         {/* Logo */}
         <Link href={'/'} className='flex items-center gap-2'>
