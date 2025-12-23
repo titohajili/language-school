@@ -5,14 +5,22 @@ import Image from 'next/image'
 import { CgClose } from 'react-icons/cg'
 import React from 'react'
 
-const MobileNav = () => {
+type Props = {
+  isOpen: boolean;
+  closeNav: () => void;
+}
+
+const MobileNav = ({isOpen, closeNav}: Props) => {
+
+  const navOpen = isOpen ? 'translate-x-0' : 'translate-x-full';
   return (
     <div>
       {/* overlay */}
-      <div className='fixed inset-0 transform transition-all ring-0 duration-500 1-100002 bg-black opacity-70 w-full h-screen'></div>
+      <div className={`fixed ${navOpen} inset-0 transform transition-all ring-0 duration-500 1-100002 bg-black opacity-70 w-full h-screen`}></div>
       {/* NavLinks */}
-      <div className='text-gray-300
+      <div className={`text-gray-300
                         fixed
+                        ${navOpen}
                         flex
                         flex-col
                         items-center
@@ -23,7 +31,7 @@ const MobileNav = () => {
                         w-full
                         bg-[#3E5496]
                         space-y-6
-                        z-1000050'> 
+                        z-1000050`}> 
       {/* Logo */}
        <Link href={'/'} className='flex items-center gap-2 absolute top-6 left-6'>
           <Image src={'/images/logo.png'} alt='Logo' width={40} height={40}/>
@@ -53,7 +61,7 @@ const MobileNav = () => {
         </div>
 
           {/* Close button */}
-       <CgClose className='absolute text-black top-5 right-5 sm:w-8 sm:h-8 w-6 h-6 cursor-pointer'/>
+       <CgClose onClick={closeNav} className='absolute text-gray-300 hover:text-white top-5 right-5 sm:w-8 sm:h-8 w-6 h-6 cursor-pointer'/>
 
       </div>
       

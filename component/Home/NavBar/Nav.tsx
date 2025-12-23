@@ -4,7 +4,12 @@ import { NAVLINKS } from '@/constant/NavLinks'
 import React from 'react'
 import { FaPhoneSquareAlt } from 'react-icons/fa'
 import { RxHamburgerMenu } from 'react-icons/rx'
-const Nav = () => {
+
+type Props = {
+  openNav: () => void
+}
+
+const Nav = ({openNav}: Props) => {
   return (
     <div className='h-[12vh] z-1000 fixed w-full transition-all duration-300  bg-rose-300'>
       <div className='flex items-center justify-between mx-auto h-full w-[85%]'>
@@ -19,7 +24,7 @@ const Nav = () => {
 
       <div className='flex items-center sm:space-x-20'>
         {/* Nav Links */}
-        <div className='hidden lg:flex items-center space-x-10'>
+        <div className='hidden xl:flex items-center space-x-10'>
             {
               NAVLINKS.map((link)=>{
                 return (
@@ -46,7 +51,7 @@ const Nav = () => {
             }
         </div>
 
-        <div className='hidden items-center justify-center space-x-2 l:flex'>
+        <div className='hidden items-center justify-center space-x-2 xl:flex'>
           {/* Phone */}
             <FaPhoneSquareAlt className='w-5 h-5 text-[#00C5B5]' /> 
             <a href="tel:+994991234567" className='font-bold text-white border-b border-transparent hover:border-white '>+994991234567</a>
@@ -54,7 +59,7 @@ const Nav = () => {
 
       </div>
           {/* Burger */}
-      <RxHamburgerMenu className='w-8 h-8 font-bold text-white cursor-pointer lg:hidden'/>
+      <RxHamburgerMenu onClick={openNav} className='xl:hidden w-8 h-8 text-white cursor-pointer'/>
       </div>
     </div>
   )
