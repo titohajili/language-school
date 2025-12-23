@@ -23,7 +23,22 @@ const Nav = () => {
             {
               NAVLINKS.map((link)=>{
                 return (
-                  <Link key={link.id} href={link.url} className='text-base text-white hover:text-gray-400  font-medium transition-all duration-200'>
+                  <Link key={link.id} href={link.url} className='
+                  relative
+                  text-base text-gray-300 font-medium
+                  transition-colors duration-200
+                  hover:text-white
+                  after:content-[""]
+                  after:absolute
+                  after:left-0
+                  after:-bottom-1
+                  after:h-0.5
+                  after:w-0
+                  after:bg-white
+                  after:transition-all
+                  after:duration-300
+                  hover:after:w-full
+                  '>
                     <p>{link.title}</p>
                   </Link>
                 )
@@ -31,14 +46,14 @@ const Nav = () => {
             }
         </div>
 
-        <div className='flex items-center justify-center space-x-3'>
+        <div className='hidden items-center justify-center space-x-2 l:flex'>
           {/* Phone */}
             <FaPhoneSquareAlt className='w-5 h-5 text-[#00C5B5]' /> 
             <a href="tel:+994991234567" className='font-bold text-white border-b border-transparent hover:border-white '>+994991234567</a>
-          {/* Burger */}
         </div>
 
       </div>
+          {/* Burger */}
       <RxHamburgerMenu className='w-8 h-8 font-bold text-white cursor-pointer lg:hidden'/>
       </div>
     </div>
