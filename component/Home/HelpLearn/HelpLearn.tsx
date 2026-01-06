@@ -3,7 +3,7 @@ import React from 'react'
 
 const HelpLearn = () => {
   return (
-    <div className='pt-16 pb-16'>
+    <div className='pt-16'>
       <div className='w-full flex h-[90vh]'>
         <div className='w-[50%] bg-[#3E5496] flex items-center justify-center'>
           <div className='w-[80%] flex flex-col items-start'>
