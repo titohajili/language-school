@@ -1,7 +1,8 @@
+"use client"
 import Image from 'next/image'
 import Link from 'next/link'
 import { NAVLINKS } from '@/constant/NavLinks'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaPhoneSquareAlt } from 'react-icons/fa'
 import { RxHamburgerMenu } from 'react-icons/rx'
 
@@ -10,8 +11,18 @@ type Props = {
 }
 
 const Nav = ({openNav}: Props) => {
+  const [navBg,setNavBg] = useState(false);
+  
+  useEffect(()=>{
+    const handler = ()=>{
+      if(window.scrollY >= 90) setNavBg(true);
+      else setNavBg(false);
+    }
+    window.addEventListener("scroll", handler);
+    return ()=> window.removeEventListener("scroll", handler);
+  },[])
   return (
-    <div className='h-[12vh] z-1000 fixed w-full transition-all duration-300  bg-transparent'>
+    <div className={`h-[12vh] z-1000 fixed w-full transition-all duration-300  ${navBg ? "bg-[#3E5496]" : "bg-transparent"}`}>
       <div className='flex items-center justify-between mx-auto h-full w-[85%]'>
         {/* Logo */}
         <Link href={'/'} className='flex items-center gap-2'>

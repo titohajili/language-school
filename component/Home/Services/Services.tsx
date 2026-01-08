@@ -6,9 +6,6 @@ import 'react-multi-carousel/lib/styles.css';
 import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md';
 
 
-type ArrowProps = {
-  onClick?: () => void
-}
 
 
 
@@ -41,7 +38,6 @@ const Services = () => {
         <div className='w-[80%] mx-auto mt-10'>
 
             <Carousel
-            arrows={false}
         showDots={true}
         responsive={responsive}
         infinite={true}

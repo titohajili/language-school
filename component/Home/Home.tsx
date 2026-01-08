@@ -4,6 +4,7 @@ import Languages from './Languages/Languages'
 import HelpLearn from './HelpLearn/HelpLearn'
 import Services from './Services/Services'
 import Offer from './Offer/Offer'
+import OurStudents from './OurStudents/OurStudents'
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <HelpLearn/>
       <Services/>
       <Offer/>
+      <OurStudents/>
     </div>
   )
 }
