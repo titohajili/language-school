@@ -9,7 +9,11 @@ type Props = {
 
 const ServicesCard = ({image, title, description}: Props) => {
   return (
-     <div className="w-95 h-100 flex flex-col p-6 items-start bg-white">
+     <div className="w-95 h-100 flex flex-col p-6 items-start bg-white cursor-pointer
+    transition
+    duration-150
+    active:scale-95
+    active:opacity-80">
 
        <div className='w-18 h-18 rounded-full overflow-hidden mt-6 border-2 border-[#00C5B5] p-2.5 flex items-center justify-center relative '>
          <Image src={image} alt="image" width={38} height={38} className='object-cover'/>

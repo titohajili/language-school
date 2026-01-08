@@ -14,7 +14,7 @@ const Languages = () => {
   const [active, setActive] = useState<Language>('uk')
 
   return (
-    <div className='pt-16 pb-16 space-y-5'>
+    <div className='pt-16 pb-16 space-y-5 bg-white'>
       <h1 className='text-6xl font-extrabold text-gray-700 text-center'>
         Languages<span className='text-[#3E5496]'>.</span>
       </h1>

@@ -23,10 +23,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${font.className} antialiased`}
+        className={`${font.className} antialiased `}
       >
-        <ResponsiveNav/>
-        {children}
+        <div
+          className="
+            fixed inset-0 -z-10
+            bg-[url('/images/lbg.jpg')]
+            bg-cover bg-center bg-no-repeat
+          "
+        />
+       
+        <ResponsiveNav />
+
+        {/* CONTENT */}
+        <main>
+          {children}
+        </main>
       </body>
     </html>
   );

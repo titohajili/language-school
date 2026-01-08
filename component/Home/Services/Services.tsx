@@ -10,27 +10,6 @@ type ArrowProps = {
   onClick?: () => void
 }
 
-const CustomLeftArrow: React.FC<ArrowProps> = ({onClick}) => {
-  return(
-    <button
-      onClick={onClick}
-      className="absolute left-0 top-1/2 -translate-y-1/2 ml-2 text-black text-3xl"
-    >
-      <MdArrowBackIos />
-    </button>
-  )
-}
-
-const CustomRightArrow: React.FC<ArrowProps> = ({ onClick }) => {
-  return (
-    <button
-      onClick={onClick}
-      className="absolute right-0 top-1/2 -translate-y-1/2 z-20  text-black text-3xl"
-    >
-      <MdArrowForwardIos />
-    </button>
-  )
-}
 
 
 const responsive = {
@@ -62,12 +41,12 @@ const Services = () => {
         <div className='w-[80%] mx-auto mt-10'>
 
             <Carousel
-        showDots={false}
+            arrows={false}
+        showDots={true}
         responsive={responsive}
         infinite={true}
         keyBoardControl={true}
-        customLeftArrow={<CustomLeftArrow />}
-  customRightArrow={<CustomRightArrow />}
+
         >
             <ServicesCard image='/images/hola.svg' title='Translation & Interpreting' description='LinguaNow offers full translation and interpreting services in five languages, both online and offline in Berlin. Our translators are certified.' />
             
